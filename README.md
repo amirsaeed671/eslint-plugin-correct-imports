@@ -49,3 +49,5 @@ You can also use the recommended config instead
 ## Supported Rules
 
 - [correct-imports/no-relative-path](docs/rules/no-relative-path.md): Enforce using import statements as string literal with absolute path
+- [correct-imports/group-import](docs/rules/group-import.md): Enforce grouping similar import statements together
+- [correct-imports/valid-order](docs/rules/valid-order.md): Enforce consistent order of import statements

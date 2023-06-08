@@ -28,20 +28,26 @@ ruleTester.run("group-import", rule, {
   invalid: [
     {
       code: `
-        // Tests
-        import AppTests from 'tests/Yup.test';
+// Tests
+import AppTests from 'tests/Yup.test';
 
-        import NewTest from 'tests/App.test';
-        import YoTest from 'tests/yo.test';
-      `,
+import NewTest from 'tests/App.test';
+import YoTest from 'tests/yo.test';
+    `,
       errors: [
         {
           message: messages.rules.tests.adjacentImportError,
           line: 5,
-          column: 9,
+          column: 1,
           type: "ImportDeclaration",
         },
       ],
+      output: `
+// Tests
+import AppTests from 'tests/Yup.test';
+import NewTest from 'tests/App.test';
+import YoTest from 'tests/yo.test';
+    `
     },
   ],
 });
